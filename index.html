@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gen Z Pro - Cursos Vacacionales Intensivos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --primary-purple: #7c3aed;
+            --light-purple: #a855f7;
+            --primary-yellow: #fbbf24;
+            --light-yellow: #fcd34d;
+            --dark-bg: #1a1a2e;
+            --darker-bg: #16213e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, var(--primary-purple), var(--primary-yellow));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.2);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-purple), var(--light-purple));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(45deg, var(--primary-yellow), var(--light-yellow));
+            color: var(--dark-bg);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.4);
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        .shape:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            background: var(--primary-purple);
+            border-radius: 50%;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .shape:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            background: var(--primary-yellow);
+            border-radius: 30%;
+            top: 60%;
+            right: 15%;
+            animation-delay: -7s;
+        }
+        
+        .shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            background: var(--light-purple);
+            border-radius: 20%;
+            bottom: 30%;
+            left: 20%;
+            animation-delay: -14s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(10px) rotate(240deg); }
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-purple), var(--primary-yellow), transparent);
+            margin: 3rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Shapes Background -->
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4">
+        <div class="card px-6 py-3 max-w-6xl mx-auto">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-yellow-400 flex items-center justify-center">
+                        <span class="font-bold text-sm text-white">GZ</span>
+                    </div>
+                    <span class="font-bold text-xl">Gen Z Pro</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="hover:text-yellow-400 transition-colors">Inicio</a>
+                    <a href="#cursos" class="hover:text-yellow-400 transition-colors">Cursos</a>
+                    <a href="#fortalezas" class="hover:text-yellow-400 transition-colors">¿Por qué nosotros?</a>
+                    <a href="#contacto" class="hover:text-yellow-400 transition-colors">Contacto</a>
+                </div>
+                
+                <button class="btn-primary">
+                    Inscríbete Ya
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="inicio" class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                <span class="gradient-text">GEN Z PRO</span><br>
+                <span class="text-white">Cursos Vacacionales</span><br>
+                <span class="text-yellow-400">Intensivos</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-4xl mx-auto">
+                Transforma tus vacaciones en la mejor inversión de tu vida.<br>
+                <span class="text-yellow-400 font-semibold">Mente, Voz y Bolsillo</span> - Todo en uno.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+                <div class="card p-6 text-center">
+                    <h3 class="text-xl font-bold mb-2 text-purple-400">Curso 1: Liderazgo e IA</h3>
+                    <p class="text-yellow-400 font-semibold mb-2">18 al 22 de Agosto</p>
+                    <p class="text-gray-300">9:00 AM - 12:30 PM</p>
+                </div>
+                <div class="card p-6 text-center">
+                    <h3 class="text-xl font-bold mb-2 text-purple-400">Curso 2: Oratoria y Finanzas</h3>
+                    <p class="text-yellow-400 font-semibold mb-2">25 al 29 de Agosto</p>
+                    <p class="text-gray-300">9:00 AM - 12:30 PM</p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                <button class="btn-primary text-lg">
+                    Ver Cursos Completos
+                </button>
+                <button class="btn-secondary text-lg">
+                    Consulta Gratuita
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+    
+    <!-- Value Propositions -->
+    <section class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">¿Qué vas a lograr?</span>
+                </h2>
+                <p class="text-xl text-gray-300">
+                    Desarrolla las 4 habilidades más demandadas del futuro
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Liderazgo Estratégico -->
+                <div class="card p-8">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-r from-purple-600 to-purple-400 flex items-center justify-center mb-6">
+                        <span class="text-2xl">👑</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-purple-400">Liderazgo Estratégico</h3>
+                    <p class="text-lg mb-4 text-yellow-400 font-semibold">
+                        Desarrollarás la confianza y las habilidades para guiar equipos, tomar decisiones impactantes y ser referente en cualquier ámbito.
+                    </p>
+                    <p class="text-gray-300 mb-4">
+                        ¡Desde proyectos escolares hasta iniciativas emprendedoras!
+                    </p>
+                    <div class="bg-white/5 p-4 rounded-lg">
+                        <p class="text-sm text-gray-400">
+                            <strong>Incluye:</strong> Módulos de gestión de equipos y toma de decisiones
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Inteligencia Artificial -->
+                <div class="card p-8">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-r from-yellow-500 to-yellow-300 flex items-center justify-center mb-6">
+                        <span class="text-2xl">🤖</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-yellow-400">Inteligencia Artificial Aplicada</h3>
+                    <p class="text-lg mb-4 text-purple-400 font-semibold">
+                        Dejarás de ser solo usuario de tecnología para entender y aprovechar el poder de la IA en tu día a día.
+                    </p>
+                    <p class="text-gray-300 mb-4">
+                        ¡Estarás un paso adelante en el mercado laboral!
+                    </p>
+                    <div class="bg-white/5 p-4 rounded-lg">
+                        <p class="text-sm text-gray-400">
+                            <strong>Incluye:</strong> Introducción a herramientas de IA, ética y aplicaciones prácticas
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Oratoria Persuasiva -->
+                <div class="card p-8">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-r from-purple-600 to-yellow-400 flex items-center justify-center mb-6">
+                        <span class="text-2xl">🎤</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-purple-400">Oratoria Persuasiva</h3>
+                    <p class="text-lg mb-4 text-yellow-400 font-semibold">
+                        Superarás el miedo a hablar en público, aprenderás a comunicar tus ideas con claridad y pasión.
+                    </p>
+                    <p class="text-gray-300 mb-4">
+                        ¡Tu voz será escuchada!
+                    </p>
+                    <div class="bg-white/5 p-4 rounded-lg">
+                        <p class="text-sm text-gray-400">
+                            <strong>Incluye:</strong> Técnicas de presentación, control del lenguaje corporal y verbal
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Finanzas Personales -->
+                <div class="card p-8">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-r from-yellow-500 to-purple-500 flex items-center justify-center mb-6">
+                        <span class="text-2xl">💰</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-yellow-400">Finanzas Personales Claras</h3>
+                    <p class="text-lg mb-4 text-purple-400 font-semibold">
+                        Adquirirás conocimientos prácticos para manejar tu dinero inteligentemente desde joven.
+                    </p>
+                    <p class="text-gray-300 mb-4">
+                        ¡Alcanza la independencia financiera!
+                    </p>
+                    <div class="bg-white/5 p-4 rounded-lg">
+                        <p class="text-sm text-gray-400">
+                            <strong>Incluye:</strong> Gestión de presupuestos, ahorro, inversión básica y mentalidad financiera
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+    
+    <!-- Course Details -->
+    <section id="cursos" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">Nuestros Cursos</span>
+                </h2>
+                <p class="text-xl text-gray-300">
+                    Dos semanas intensivas que cambiarán tu futuro
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Curso 1 -->
+                <div class="card p-8">
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold mb-4 text-purple-400">Liderazgo e Inteligencia Artificial</h3>
+                        <div class="bg-gradient-to-r from-purple-600 to-purple-400 text-white px-6 py-3 rounded-full inline-block mb-4">
+                            18 al 22 de Agosto | 9:00 AM - 12:30 PM
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm font-bold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Definición de liderazgo actual</h4>
+                                <p class="text-gray-400 text-sm">Conceptos modernos adaptados a la era digital</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm font-bold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Tipos de liderazgo - Autoconocimiento</h4>
+                                <p class="text-gray-400 text-sm">Descubre tu estilo único y fortalece tu confianza</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm font-bold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Ejercicios prácticos de liderazgo</h4>
+                                <p class="text-gray-400 text-sm">Simulaciones reales y actividades prácticas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-black text-sm font-bold">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Fundamentos y aplicaciones de IA</h4>
+                                <p class="text-gray-400 text-sm">Principios básicos y aplicaciones en liderazgo</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-black text-sm font-bold">5</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Ética tecnológica</h4>
+                                <p class="text-gray-400 text-sm">Uso responsable de tecnologías emergentes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-black text-sm font-bold">6</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Creación de prompts y prototipos</h4>
+                                <p class="text-gray-400 text-sm">Instrucciones efectivas para IA y primeros proyectos</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary w-full text-lg">
+                        Inscríbete - Curso 1
+                    </button>
+                </div>
+                
+                <!-- Curso 2 -->
+                <div class="card p-8">
+                    <div class="text-center mb-8">
+                        <h3 class="text-3xl font-bold mb-4 text-yellow-400">Oratoria y Finanzas</h3>
+                        <div class="bg-gradient-to-r from-yellow-500 to-yellow-300 text-black px-6 py-3 rounded-full inline-block mb-4 font-semibold">
+                            25 al 29 de Agosto | 9:00 AM - 12:30 PM
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm font-bold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Comunicación efectiva</h4>
+                                <p class="text-gray-400 text-sm">Técnicas para mensajes claros y persuasivos</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm font-bold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Manejo del miedo escénico</h4>
+                                <p class="text-gray-400 text-sm">Supera la ansiedad con técnicas probadas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-sm font-bold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Técnicas de voz y lenguaje corporal</h4>
+                                <p class="text-gray-400 text-sm">Utiliza tu voz y presencia para potenciar tu mensaje</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-black text-sm font-bold">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Conceptos financieros básicos</h4>
+                                <p class="text-gray-400 text-sm">Fundamentos de finanzas personales e inversión</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-black text-sm font-bold">5</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Interés simple y compuesto</h4>
+                                <p class="text-gray-400 text-sm">El poder del interés compuesto para hacer crecer tu dinero</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-black text-sm font-bold">6</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Emprendimiento juvenil</h4>
+                                <p class="text-gray-400 text-sm">Bases para iniciar tu proyecto y generar ingresos</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-secondary w-full text-lg">
+                        Inscríbete - Curso 2
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Combo Offer -->
+            <div class="mt-16 text-center">
+                <div class="card p-8 max-w-2xl mx-auto">
+                    <h3 class="text-3xl font-bold mb-4 gradient-text">🎯 Paquete Completo</h3>
+                    <p class="text-lg mb-6">Inscríbete en ambos cursos y obtén un <span class="text-yellow-400 font-bold">descuento especial</span></p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold gradient-text">¡Consulta precio especial!</span>
+                    </div>
+                    <button class="bg-gradient-to-r from-purple-600 via-yellow-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:transform hover:scale-105 transition-all">
+                        Obtener Paquete Completo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+    
+    <!-- Program Strengths -->
+    <section id="fortalezas" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">¿Por qué Gen Z Pro?</span>
+                </h2>
+                <p class="text-xl text-gray-300">
+                    No es un curso más. Somos diferentes por estas razones:
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-8 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-r from-purple-600 to-yellow-400 flex items-center justify-center">
+                        <span class="text-3xl">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-purple-400">Enfoque Holístico</h3>
+                    <p class="text-gray-300">
+                        No es un curso más. GEN Z PRO integra las habilidades blandas y duras más demandadas: 
+                        <span class="text-yellow-400 font-semibold">mente, voz y bolsillo, todo en uno.</span>
+                    </p>
+                </div>
+                
+                <div class="card p-8 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-r from-yellow-500 to-purple-500 flex items-center justify-center">
+                        <span class="text-3xl">🚀</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-400">Contenido Actualizado</h3>
+                    <p class="text-gray-300">
+                        Diseñado pensando en el mundo de la Gen Z: 
+                        <span class="text-purple-400 font-semibold">relevante, práctico y adaptado a las tendencias actuales</span> 
+                        de liderazgo e IA.
+                    </p>
+                </div>
+                
+                <div class="card p-8 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-r from-purple-600 to-yellow-400 flex items-center justify-center">
+                        <span class="text-3xl">🏖️</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-purple-400">Formato Vacacional Intensivo</h3>
+                    <p class="text-gray-300">
+                        Aprovecha tus vacaciones para una 
+                        <span class="text-yellow-400 font-semibold">inversión que durará toda la vida</span>, 
+                        de forma dinámica y divertida.
+                    </p>
+                </div>
+                
+                <div class="card p-8 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-r from-yellow-500 to-purple-500 flex items-center justify-center">
+                        <span class="text-3xl">👨‍🏫</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-400">Instructores Expertos</h3>
+                    <p class="text-gray-300">
+                        Aprende de 
+                        <span class="text-purple-400 font-semibold">profesionales con experiencia real</span> 
+                        en cada campo, apasionados por el desarrollo juvenil.
+                    </p>
+                </div>
+                
+                <div class="card p-8 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-r from-purple-600 to-yellow-400 flex items-center justify-center">
+                        <span class="text-3xl">⚡</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-purple-400">Metodología Práctica</h3>
+                    <p class="text-gray-300">
+                        <span class="text-yellow-400 font-semibold">Menos teoría, más acción.</span> 
+                        Proyectos, debates y simulaciones que te prepararán para el mundo real.
+                    </p>
+                </div>
+                
+                <div class="card p-8 text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-r from-yellow-500 to-purple-500 flex items-center justify-center">
+                        <span class="text-3xl">🎓</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-400">Certificación Reconocida</h3>
+                    <p class="text-gray-300">
+                        Obtén un 
+                        <span class="text-purple-400 font-semibold">certificado que respalde tus nuevas habilidades</span> 
+                        y te diferencie en el mercado laboral.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="section-divider"></div>
+    
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="gradient-text">¿Listo para transformar tu futuro?</span>
+                </h2>
+                <p class="text-xl text-gray-300">
+                    Inscríbete ahora y asegura tu lugar en la próxima generación de líderes
+                </p>
+            </div>
+            
+            <div class="card p-10">
+                <form id="contactForm" class="space-y-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <label for="name" class="block mb-3 font-semibold text-purple-400">Nombre completo</label>
+                            <input type="text" id="name" class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-yellow-400 transition-colors backdrop-blur-sm" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-3 font-semibold text-purple-400">Correo electrónico</label>
+                            <input type="email" id="email" class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-yellow-400 transition-colors backdrop-blur-sm" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="age" class="block mb-3 font-semibold text-purple-400">Edad</label>
+                        <input type="number" id="age" min="15" max="99" placeholder="Ej: 20" class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-yellow-400 transition-colors backdrop-blur-sm" required>
+                    </div>
+                    
+                    <div>
+                        <label for="goals" class="block mb-3 font-semibold text-purple-400">Curso a inscribir y qué esperas lograr</label>
+                        <textarea id="goals" rows="5" class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-yellow-400 transition-colors backdrop-blur-sm" placeholder="Ejemplo: Me interesa el curso de Liderazgo e IA. Espero desarrollar habilidades de liderazgo para mi proyecto universitario y aprender sobre inteligencia artificial para estar preparado para el futuro..." required></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="bg-gradient-to-r from-purple-600 via-yellow-500 to-purple-600 text-white px-12 py-4 rounded-full font-semibold text-lg hover:transform hover:scale-105 transition-all">
+                            🚀 Inscribirme Ahora
+                        </button>
+                        <p class="text-sm text-gray-400 mt-4">
+                            * Te contactaremos en menos de 24 horas para confirmar tu inscripción
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-16 px-6 border-t border-white/10">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-yellow-400 flex items-center justify-center">
+                            <span class="font-bold text-white">GZ</span>
+                        </div>
+                        <span class="font-bold text-xl">Gen Z Pro</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Cursos vacacionales intensivos diseñados para la Generación Z. 
+                        Transforma tu potencial en éxito.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-6 text-purple-400">Cursos</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li>Liderazgo e IA (18-22 Agosto)</li>
+                        <li>Oratoria y Finanzas (25-29 Agosto)</li>
+                        <li>Paquete Completo</li>
+                        <li>Horario: 9:00 AM - 12:30 PM</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-6 text-yellow-400">Contacto</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li>📧 potenciatuvalor@gmail.com</li>
+                        <li>📱 WhatsApp: 04241381700</li>
+                        <li>🌍 Modalidad presencial</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8">
+                <div class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2024 Gen Z Pro. Todos los derechos reservados.
+                </div>
+                <div class="flex space-x-6 text-sm text-gray-400">
+                    <a href="#" class="hover:text-yellow-400 transition-colors">Términos y Condiciones</a>
+                    <a href="#" class="hover:text-yellow-400 transition-colors">Política de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                
+                // Create success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'card p-8 text-center mt-8';
+                successMessage.innerHTML = `
+                    <div class="text-6xl mb-4">🎉</div>
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">¡Solicitud Enviada!</h3>
+                    <p class="text-lg text-gray-300 mb-4">
+                        Gracias <span class="text-yellow-400 font-semibold">${name}</span>, 
+                        hemos recibido tu solicitud de inscripción.
+                    </p>
+                    <p class="text-gray-400">
+                        Te contactaremos en <span class="text-purple-400">${email}</span> 
+                        dentro de las próximas 24 horas para confirmar tu lugar.
+                    </p>
+                `;
+                
+                // Replace form with success message
+                contactForm.parentNode.replaceChild(successMessage, contactForm);
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Add parallax effect to shapes
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const shapes = document.querySelectorAll('.shape');
+                
+                shapes.forEach((shape, index) => {
+                    const speed = 0.3 + (index * 0.1);
+                    shape.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96a157df439f7b37',t:'MTc1NDM0NDk5MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
