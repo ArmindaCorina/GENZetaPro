@@ -1,8 +1,3 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export',
-  assetPrefix: '/GENZetaPro/',
-  basePath: '/GENZetaPro',
-};
-
-module.exports = nextConfig;
+export default function Home() {
+  return <h1>¡Hola, Next.js en GitHub Pages!</h1>;
+}
